@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "48a6a442-9d53-4623-a4fa-a361be2c0ed9",
+		"name": "Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Bharat Rawat\",\n\t\"email\" : \"bharat@cwebconsultants.com\",\n    \"password\" : \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register",
+						""
+					]
+				},
+				"description": "http://localhost:8080/auth/register/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN USER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"bharat@cwebconsultants.com\",\n    \"password\" : \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "http://localhost:8080/auth/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "USER DETAIL BY ACCESS TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"access_token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTcyNCwiZXhwIjoxNjQzNjkyMTI0fQ.gkYJjWbKeYPiTm8BKXaww2fqJ6-CPYrm-hJKFDWxtB8\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/access-token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"access-token",
+						""
+					]
+				},
+				"description": "http://localhost:8080/auth/access-token/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "ACCESS TOKEN BY REFRESH TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"refresh_token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc2NCwiZXhwIjoxNjQzNzc4NTY0fQ.Gvp4y1nJ5bb6MxOD2kvhwuLqbpS7IzUfOgs8wa1lSRc\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/refresh-token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"refresh-token",
+						""
+					]
+				},
+				"description": "http://localhost:8080/auth/refresh-token/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "SAVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Loream Ipsum\",\n    \"type\" : \"Company\",\n\t\"position\" : \"1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies"
+					]
+				},
+				"description": "http://localhost:8080/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VhNzU2ZThlMTUzMWVhOTUxNjUzYyIsImlhdCI6MTY0ODI3MzI2OSwiZXhwIjoxNjQ4MzU5NjY5fQ.ifSwNi_KsbYCEw-9717gXpYoc8uTC8PkiPYzyNTq9X0"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies"
+					]
+				},
+				"description": "http://localhost:8080/:document"
+			},
+			"response": []
+		},
+		{
+			"name": "PAGINATION",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/companies/?offset=0&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						""
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				},
+				"description": "http://localhost:8080/:document/?offset=0&limit=1"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE BY ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Jhon Doe\",\n    \"description\" : \"Update\",\n\t\"position\" : \"9876543210\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/companies/623ea28f9aff5c8037824aad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"623ea28f9aff5c8037824aad"
+					]
+				},
+				"description": "http://localhost:8080/:document/:id"
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/companies/623ea28f9aff5c8037824aad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"623ea28f9aff5c8037824aad"
+					]
+				},
+				"description": "http://localhost:8080/:document/:id"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/companies/623ea28f9aff5c8037824aad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"623ea28f9aff5c8037824aad"
+					]
+				},
+				"description": "http://localhost:8080/:document/:id"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ALL",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjc2ZWFmODEzNDdlMTkzYWUyZTNmMCIsImlhdCI6MTY0MzYwNTc3MCwiZXhwIjoxNjQzNjkyMTcwfQ.ca55GqNqnfBouG-q9CXbG44EQsQM0YC9O4jSZwkf_Vk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies"
+					]
+				},
+				"description": "http://localhost:8080/:document"
+			},
+			"response": []
+		}
+	]
+}
